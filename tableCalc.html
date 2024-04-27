@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marble Calculation</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    #result {
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Marble Calculation</h2>
+    <label for="table1Length">Table 1 Length (ft):</label>
+    <input type="number" id="table1Length">
+    <label for="table1Width">Table 1 Width (ft):</label>
+    <input type="number" id="table1Width">
+    <label for="table2Length">Table 2 Length (ft):</label>
+    <input type="number" id="table2Length">
+    <label for="table2Width">Table 2 Width (ft):</label>
+    <input type="number" id="table2Width">
+    <label for="table3Length">Table 3 Length (ft):</label>
+    <input type="number" id="table3Length">
+    <label for="table3Width">Table 3 Width (ft):</label>
+    <input type="number" id="table3Width">
+    <label for="table4Length">Table 4 Length (ft):</label>
+    <input type="number" id="table4Length">
+    <label for="table4Width">Table 4 Width (ft):</label>
+    <input type="number" id="table4Width">
+    <label for="table5Length">Table 5 Length (ft):</label>
+    <input type="number" id="table5Length">
+    <label for="table5Width">Table 5 Width (ft):</label>
+    <input type="number" id="table5Width">
+    <button onclick="calculate()">Calculate</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculate() {
+        var table1Length = parseFloat(document.getElementById('table1Length').value);
+        var table1Width = parseFloat(document.getElementById('table1Width').value);
+        var table2Length = parseFloat(document.getElementById('table2Length').value);
+        var table2Width = parseFloat(document.getElementById('table2Width').value);
+        var table3Length = parseFloat(document.getElementById('table3Length').value);
+        var table3Width = parseFloat(document.getElementById('table3Width').value);
+        var table4Length = parseFloat(document.getElementById('table4Length').value);
+        var table4Width = parseFloat(document.getElementById('table4Width').value);
+        var table5Length = parseFloat(document.getElementById('table5Length').value);
+        var table5Width = parseFloat(document.getElementById('table5Width').value);
+
+        var area1 = table1Length * table1Width;
+        var area2 = table2Length * table2Width;
+        var area3 = table3Length * table3Width;
+        var area4 = table4Length * table4Width;
+        var area5 = table5Length * table5Width;
+
+        var totalArea = area1 + area2 + area3 + area4 + area5;
+
+        document.getElementById('result').innerHTML = 'Total Square Footage of Marble Required: ' + totalArea + ' sq ft';
+    }
+</script>
+
+</body>
+</html>
